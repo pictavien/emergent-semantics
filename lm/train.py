@@ -289,7 +289,7 @@ def main():
                     )
             except FileNotFoundError:
                 torch.save(args, f"{output_dir}/args.pt")
-    del args
+#    del args
 
     accelerator.wait_for_everyone()
 
@@ -771,7 +771,7 @@ def main():
             accelerator.log(
                 {
                     "perplexity": perplexity,
-                    "eval_loss": eval_loss,
+                    "eval_loss": loss,
                     "train_loss": total_loss.item() / len(train_dataloader),
                     "epoch": epoch,
                     "step": completed_steps,

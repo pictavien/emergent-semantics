@@ -2,9 +2,6 @@ DATASET=$1
 ARGS="$2"
 
 set -x
-ACCELERATE_MIXED_PRECISION=fp16
-PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-export ACCELERATE_MIXED_PRECISION PYTORCH_CUDA_ALLOC_CONF
 
 python -m lm.train \
     --dataset_name $DATASET \
